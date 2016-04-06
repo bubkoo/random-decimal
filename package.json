@@ -42,8 +42,5 @@
   "bugs": {
     "url": "https://github.com/bubkoo/random-decimal/issues"
   },
-  "homepage": "https://github.com/bubkoo/random-decimal#readme",
-  "dependencies": {
-    "random-natural": "file:///Users/Johnny/Documents/github.bubkoo/random-natural"
-  }
+  "homepage": "https://github.com/bubkoo/random-decimal#readme"
 }
