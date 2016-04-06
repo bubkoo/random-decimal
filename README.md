@@ -38,19 +38,19 @@ randomDecimal(10, 100, 2);
 
 ### randomDecimal()
 
-Returns an float from `0` to `1`.
+Returns a float from `0` to `1`.
 
 ### randomDecimal(max)
 
-Returns an float from `0` to `max`.
+Returns a float from `0` to `max`.
 
 ### randomDecimal(min, max)
 
-Returns an float from `min` to `max`.
+Returns a float from `min` to `max`.
 
 ### randomDecimal(min, max, precision)
 
-Returns an float from `min` to `max` which precision is `precision`.
+Returns a float from `min` to `max` which precision is `precision`.
 
 #### min
 
@@ -66,21 +66,25 @@ Default: `1`
 
 Maximum float to return.
 
+**Note:** 
+
+- Negative `min` and `max` will be treat as `0`.
+- Non-numeric `min` or `max` will be treat as `0`.
+- If `min` is greater than `max`, they will be swapped with each other.
+
+
 #### precision
 
 Type: `Int`  
 Default: `undefined`
 
-If `precision` is `undefined`, we will ignore it.
+The precision of the returned float.
 
 **Note:** 
 
-- Negative `min` and `max` will be treat as `0`
-- Non-numeric `min` or `max` will be treat as `0`
-- If `min` greater than `max`, we will swap each other
-- Non-numeric `precision` will be treat as `undefined`
-- If `precision` greater than `20`, then `precision` will be `20`
-- If `precision` less than `0`, then `precision` will be `0`
+- Non-numeric `precision` will be ignored.
+- If `precision` is greater than `20`, then it will be treat as `20`.
+- If `precision` is less than `0`, then it will be treat as `0`.
 
 
 ## Related
