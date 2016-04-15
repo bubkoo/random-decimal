@@ -3,10 +3,10 @@
 > Generate a random decimal.
 
 
-[![MIT License](https://img.shields.io/badge/license-MIT_License-green.svg?style=flat-square)](https://github.com/bubkoo/random-decimal/blob/master/LICENSE)
+[![MIT License](https://img.shields.io/badge/license-MIT_License-green.svg?style=flat-square)](https://github.com/mock-end/random-decimal/blob/master/LICENSE)
 
-[![build:?](https://img.shields.io/travis/bubkoo/random-decimal/master.svg?style=flat-square)](https://travis-ci.org/bubkoo/random-decimal)
-[![coverage:?](https://img.shields.io/coveralls/bubkoo/random-decimal/master.svg?style=flat-square)](https://coveralls.io/github/bubkoo/random-decimal)
+[![build:?](https://img.shields.io/travis/mock-end/random-decimal/master.svg?style=flat-square)](https://travis-ci.org/mock-end/random-decimal)
+[![coverage:?](https://img.shields.io/coveralls/mock-end/random-decimal/master.svg?style=flat-square)](https://coveralls.io/github/mock-end/random-decimal)
 
 
 ## Install

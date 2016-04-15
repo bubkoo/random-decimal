@@ -1,6 +1,6 @@
 {
   "name": "random-decimal",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Generate a random decimal.",
   "main": "index.js",
   "scripts": {
@@ -37,10 +37,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bubkoo/random-decimal.git"
+    "url": "git+https://github.com/mock-end/random-decimal.git"
   },
   "bugs": {
-    "url": "https://github.com/bubkoo/random-decimal/issues"
+    "url": "https://github.com/mock-end/random-decimal/issues"
   },
-  "homepage": "https://github.com/bubkoo/random-decimal#readme"
+  "homepage": "https://github.com/mock-end/random-decimal#readme"
 }
