@@ -62,7 +62,7 @@ randomDecimal({min: 0, max: 100, fixed: 8});
 // => 45.92367599
 ```
 
-> For more use-cases see the [tests](https://github.com/mock-end/random-decimal/blob/master/test/spec/index.js)
+> For more use-cases see the [tests](https://github.com/mock-end/random-decimal/blob/master/test/spec/index.js).
 
 
 ## Contributing
