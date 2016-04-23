@@ -17,9 +17,6 @@ $ npm install --save random-decimal
 
 ## Usage
 
-> For more use-cases see the [tests](https://github.com/mock-end/random-decimal/blob/master/test/spec/index.js)
-
-
 ```js
 var randomDecimal = require('random-decimal');
 
@@ -32,6 +29,7 @@ By default it will return a fixed number of at most 4 digits after the decimal.
 
 ```js
 randomDecimal();
+// default range: 0 to 9007199254740992
 // => 211920142886.5024
 ```
 
@@ -61,6 +59,10 @@ Or combine them:
 randomDecimal({min: 0, max: 100, fixed: 8});
 // => 45.92367599
 ```
+
+
+
+> For more use-cases see the [tests](https://github.com/mock-end/random-decimal/blob/master/test/spec/index.js)
 
 
 ## Contributing

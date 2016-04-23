@@ -13,7 +13,6 @@ describe('random-decimal', function () {
     expect(randomDecimal()).to.be.within(0, MAX_SAFE_INT);
     expect(randomDecimal()).to.be.match(/(\d+.[\d]{1,4})?$/);
 
-
     expect(randomDecimal({
       max: 2
     })).be.be.within(0, 2);
