@@ -46,6 +46,8 @@ randomDecimal({min:10, max: 100});
 // => 66.7269
 ```
 
+**Note**: these `min` and `max` are **inclusive**, so they are included in the range.
+
 To retrieve a set number of fixed digits after the decimal, provide it as an option:
 
 ```js
@@ -59,6 +61,7 @@ Or combine them:
 randomDecimal({min: 0, max: 100, fixed: 8});
 // => 45.92367599
 ```
+
 
 
 
