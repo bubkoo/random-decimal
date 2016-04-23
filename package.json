@@ -51,6 +51,7 @@
     "clamp": "^1.0.1",
     "max-safe-int": "^1.0.0",
     "object-assign": "^4.0.1",
+    "to-integer": "^1.0.1",
     "tofixed": "^1.0.0"
   }
 }
