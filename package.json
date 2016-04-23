@@ -1,7 +1,7 @@
 {
   "name": "random-decimal",
-  "version": "1.0.0",
-  "description": "Generate a random decimal.",
+  "version": "1.0.1",
+  "description": "Return a random decimal.",
   "main": "index.js",
   "scripts": {
     "lint": "jshint index.js",
@@ -11,22 +11,26 @@
     "test:rpt": "npm run test:cov && coveralls < ./test/coverage/lcov.info",
     "prepublish": "npm test"
   },
+  "keywords": [
+    "decimal",
+    "float",
+    "double",
+    "num",
+    "number",
+    "generator",
+    "generate",
+    "random",
+    "randomly",
+    "randomize",
+    "chance",
+    "test",
+    "dice",
+    "mock"
+  ],
   "author": {
     "name": "bubkoo",
     "email": "bubkoo.wy@gmail.com"
   },
-  "keywords": [
-    "generator",
-    "generate",
-    "gen",
-    "random",
-    "randomize",
-    "rand",
-    "decimal",
-    "max",
-    "min",
-    "math"
-  ],
   "license": "MIT",
   "devDependencies": {
     "jshint": "^2.9.1",
@@ -42,5 +46,11 @@
   "bugs": {
     "url": "https://github.com/mock-end/random-decimal/issues"
   },
-  "homepage": "https://github.com/mock-end/random-decimal#readme"
+  "homepage": "https://github.com/mock-end/random-decimal#readme",
+  "dependencies": {
+    "clamp": "^1.0.1",
+    "max-safe-int": "^1.0.0",
+    "object-assign": "^4.0.1",
+    "tofixed": "^1.0.0"
+  }
 }

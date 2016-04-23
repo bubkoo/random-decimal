@@ -1,36 +1,35 @@
 'use strict';
 
-function fixme(val) {
+var clamp         = require('clamp');
+var assign        = require('object-assign');
+var toFixed       = require('tofixed');
+var toInteger     = require('to-integer');
+
+var MAX_SAFE_INT = require('max-safe-int');
+
+function fixme(val, min) {
 
   if (typeof val !== 'number') {
-    val = parseInt(val, 10);
+    val = toInteger(val);
   }
 
-  return isNaN(val) || !isFinite(val) ? 0 : val;
+  if (isNaN(val) || !isFinite(val)) {
+    val = min ? 0 : MAX_SAFE_INT;
+  }
+
+  return clamp(val, 0, MAX_SAFE_INT);
 }
 
-module.exports = function (min, max, precision) {
+module.exports = function (options) {
 
-  var length = arguments.length;
+  options = assign({
+    min: 0,
+    max: MAX_SAFE_INT,
+    fixed: 4
+  }, options);
 
-  if (length === 0) {
-    min = 0;
-    max = 1;
-  } else if (length === 1) {
-    max = fixme(min);
-    min = 0;
-  } else {
-    min = fixme(min);
-    max = fixme(max);
-  }
-
-  if (min < 0) {
-    min = 0;
-  }
-
-  if (max < 0) {
-    max = 0;
-  }
+  var min = fixme(options.min, true);
+  var max = fixme(options.max, false);
 
   // swap to variables
   // ref: http://stackoverflow.com/a/16201688
@@ -40,29 +39,11 @@ module.exports = function (min, max, precision) {
     min = min ^ max;
   }
 
-
   var decimal = Math.random() * (max - min) + min;
+  var fixed   = clamp(toInteger(options.fixed), 0, 17);
 
-  var type = typeof precision;
-  if (type !== 'undefined') {
-    if (type !== 'number') {
-      precision = parseInt(precision, 10);
-    }
+  return fixed
+    ? parseFloat(toFixed(decimal, fixed))
+    : Math.round(decimal);
 
-    if (isNaN(precision) || !isFinite(precision)) {
-      return decimal;
-    }
-
-    if (precision < 0) {
-      precision = 0;
-    } else if (precision > 20) {
-      precision = 20;
-    }
-
-    return precision
-      ? parseFloat(decimal.toFixed(precision))
-      : Math.round(decimal);
-  }
-
-  return decimal;
 };
