@@ -24,7 +24,8 @@ describe('random-decimal', function () {
 
     expect(randomDecimal({
       max: 2,
-      fixed: 2
+      fixed: 2,
+      inspected: true
     })).be.be.match(/([012].[\d]{1,2})?$/);
 
     expect(randomDecimal({
@@ -72,6 +73,5 @@ describe('random-decimal', function () {
       max: '2',
       fixed: 'asd'
     })).be.be.match(/([012].[\d]{1,17})?$/);
-
   });
 });

@@ -1,35 +1,29 @@
 'use strict';
 
-var clamp         = require('clamp');
-var assign        = require('object-assign');
-var toFixed       = require('tofixed');
-var toInteger     = require('to-integer');
+var clamp     = require('clamp');
+var fixme     = require('random-integral').fixme;
+var toFixed   = require('tofixed');
+var toInteger = require('to-integer');
 
 var MAX_SAFE_INT = require('max-safe-int');
 
-function fixme(val, min) {
-
-  if (typeof val !== 'number') {
-    val = toInteger(val);
-  }
-
-  if (isNaN(val) || !isFinite(val)) {
-    val = min ? 0 : MAX_SAFE_INT;
-  }
-
-  return clamp(val, 0, MAX_SAFE_INT);
-}
-
 module.exports = function (options) {
 
-  options = assign({
-    min: 0,
-    max: MAX_SAFE_INT,
-    fixed: 4
-  }, options);
+  if (options) {
+    if (!options.inspected) {
+      options.min = fixme(options.min, 0, MAX_SAFE_INT, true);
+      options.max = fixme(options.max, 0, MAX_SAFE_INT, false);
+    }
+  } else {
+    options = {
+      min: 0,
+      max: MAX_SAFE_INT,
+      fixed: 4
+    };
+  }
 
-  var min = fixme(options.min, true);
-  var max = fixme(options.max, false);
+  var min = options.min;
+  var max = options.max;
 
   // swap to variables
   // ref: http://stackoverflow.com/a/16201688
@@ -45,5 +39,6 @@ module.exports = function (options) {
   return fixed
     ? parseFloat(toFixed(decimal, fixed))
     : Math.round(decimal);
-
 };
+
+module.exports.fixme = fixme;
