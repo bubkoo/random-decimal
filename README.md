@@ -25,7 +25,7 @@ var randomDecimal = require('random-decimal');
 // - randomDecimal([options])
 ```
 
-By default it will return a fixed number of at most 4 digits after the decimal.
+By default it will return a fixed number of at most `4` digits after the decimal.
 
 ```js
 randomDecimal();
@@ -33,7 +33,7 @@ randomDecimal();
 // => 211920142886.5024
 ```
 
-**Note**: *at most* 4 digits. This because, unless we returned trailing zeroes (which aren’t allowed on the JavaScript float) we can’t guarantee 4 digits after the decimal. So if random chance comes back with `82383854.2000` then `82383854.2` is what will be returned.
+**Note**: *at most* `4` digits. This because, unless we returned trailing zeroes (which aren’t allowed on the JavaScript float) we can’t guarantee `4` digits after the decimal. So if random chance comes back with `82383854.2000` then `82383854.2` is what will be returned.
 
 
 Can optionally provide min and max:
